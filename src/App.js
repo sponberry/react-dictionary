@@ -1,16 +1,14 @@
-
+import DictionarySearch from "./DictionarySearch";
 import './App.css';
+
+
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container-fluid">
       <header className="App-header">
-        <h1>Dictionary Definition</h1>
-        <p>
-          Search for a word
-        </p>
-        <input type="search" placeholder="type a word..." />
       </header>
+      <DictionarySearch />
     </div>
   );
 }

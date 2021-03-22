@@ -1,0 +1,64 @@
+h1, form {
+    text-align: center;
+}
+
+h1 {
+    font-weight: 800;
+}
+
+form {
+    margin: 0 auto;
+    text-align: center;
+    width: 50% !important;
+}
+
+.form-control {
+    border: none !important;
+    width: 70% !important;
+}
+
+.btn-outline-secondary {
+    border: none !important;
+}
+
+.vocabulary-title {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.pronunciation {
+    color: lightblue;
+    display: inline-block;
+    padding-bottom: 20px;
+}
+
+.icons {
+    font-size: 2em;
+    margin: 0 0 0 5px;
+    padding: 3px;
+}
+
+.icons:hover {
+    text-decoration: none;
+    background-color: rgba(188, 215, 224, 0.6);
+    border-radius: 20px;
+}
+
+.word-category {
+    color: rgb(61, 61, 61);
+    font-style: italic;
+    font-size: 24px;
+}
+
+.category-underline {
+    width: 50px;
+    margin-left: 0;
+}
+
+.spacer-twenty {
+    padding: 20px;
+}
+
+.spacer-forty {
+    padding: 40px;
+}
