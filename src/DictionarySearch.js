@@ -22,8 +22,7 @@ export default function DictionarySearch() {
       setCurrentWord({
         ready: true,
         word: response.data[0].word,
-        pronunciation: response.data[0].phonetics[0].text,
-        pronunciationAudioLink: response.data[0].phonetics[0].audio,
+        pronunciation: response.data[0].phonetics[0],
         definitionsArray: response.data[0].meanings,
         synonyms: response.data[0].meanings[0].definitions[0].synonyms,
       });
@@ -60,8 +59,8 @@ export default function DictionarySearch() {
         load={currentWord.ready}
         word={currentWord.word}
         pronunciation={currentWord.pronunciation}
-        link={currentWord.pronunciationAudioLink}
         definitionsArray={currentWord.definitionsArray}
+        synonyms={currentWord.synonyms}
          />
       </div>
     )
