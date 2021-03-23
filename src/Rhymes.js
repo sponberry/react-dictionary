@@ -3,25 +3,25 @@ import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-export default function Synonyms(props) {
-    let moreSynonyms = []
+export default function Rhymes(props) {
+    let moreRhymes = []
 
-    if (props.synonyms) {
+    if (props.rhymes) {
       return (
-        <span className="synonyms">
+        <span className="rhymes">
           <h2 className="card-title">
-            Synonyms
+            Rhymes
           </h2>
           <p>
-            {props.synonyms.map(function (synonym, index) {
+            {props.rhymes.map(function (rhyme, index) {
               if (index <= 5) {
                 return(
                   <div key={index}>
-                    {synonym}
+                    {rhyme.word}
                   </div>
                 );
                 } else {
-                  moreSynonyms.push(synonym);
+                  moreRhymes.push(rhyme.word);
                 }
             })}
           </p>
@@ -30,10 +30,10 @@ export default function Synonyms(props) {
               Read more
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
-              <Card.Body>{moreSynonyms.map(function (synonym, index) {
+              <Card.Body>{moreRhymes.map(function (word, index) {
                 return (
                   <div key={index}>
-                    {synonym}
+                    {word}
                   </div>
                 )
               })}</Card.Body>
@@ -43,9 +43,9 @@ export default function Synonyms(props) {
       )
     } else {
       return (
-        <span className="synonyms">
+        <span className="rhymes">
           <h2 className="card-title">
-            Synonyms
+            Rhymes
           </h2>
           <p>
             None found.

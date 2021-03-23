@@ -8,7 +8,8 @@ import VocabularyDisplay from "./VocabularyDisplay";
 
 export default function DictionarySearch() {
   let [vocabulary, setVocabulary] = useState(null);
-  let [currentWord, setCurrentWord] = useState({ready:false})
+  let [currentWord, setCurrentWord] = useState({ready:false});
+  let [rhymes, setRhymes] = useState([]);
 
   function handleTyping(event) {
     setVocabulary(event.target.value);
@@ -29,10 +30,24 @@ export default function DictionarySearch() {
     }
   }
 
+  function getRhymes(response) {
+    if (response.status !== 200) {
+      alert("An error occurred");
+      setVocabulary(null);
+    } else {
+      setRhymes(response.data);
+    }
+  }
+
   function handleSearch(event) {
     event.preventDefault();
-    let dictApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${vocabulary}`
-    axios.get(dictApiUrl).then(getWordData)
+    let dictApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${vocabulary}`;
+    let museApiUrl = `https://api.datamuse.com/words?rel_rhy=${vocabulary}`
+    axios.get(museApiUrl).then(getRhymes);
+    setTimeout(() =>
+      {axios.get(dictApiUrl).then(getWordData)},
+      500
+    );
   }
   
     return (
@@ -61,6 +76,7 @@ export default function DictionarySearch() {
         pronunciation={currentWord.pronunciation}
         definitionsArray={currentWord.definitionsArray}
         synonyms={currentWord.synonyms}
+        rhymes={rhymes}
          />
       </div>
     )

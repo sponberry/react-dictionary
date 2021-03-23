@@ -1,8 +1,11 @@
 import React from "react";
 import Definitions from "./Definitions";
+import Rhymes from "./Rhymes";
 import Synonyms from "./Synonyms";
 
 export default function VocabularyDisplay(props) {
+  console.log(props.rhymes);
+
 
   if (props.load) {
     return (
@@ -27,21 +30,7 @@ export default function VocabularyDisplay(props) {
             <div className="row mt-5">
             {/* column 1 */}
               <div className="col-md-6">
-                <h2 className="card-title">
-                  Rhymes
-                </h2>
-                <p>
-                  {/* use this api: https://api.datamuse.com/words?rel_rhy=forgetful&nry=forgetful */}
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Phasellus a sem varius,
-                  <button class="btn btn btn-outline-secondary p-1 ml-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                  Read more
-                  </button>
-                </p>
-                <div class="collapse" id="collapseExample">
-                  <div class="card card-body">
-                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                  </div>
-                </div>
+                <Rhymes rhymes={props.rhymes} />
               </div>
               {/* column 2 */}
               <div className="col-md-6">
