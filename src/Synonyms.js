@@ -22,6 +22,9 @@ export default function Synonyms(props) {
                 );
                 } else {
                   moreSynonyms.push(synonym);
+                  return (
+                    <span></span>
+                  )
                 }
             })}
           </p>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Definitions from "./Definitions";
 import Rhymes from "./Rhymes";
 import Synonyms from "./Synonyms";
