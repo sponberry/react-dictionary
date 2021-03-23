@@ -4,11 +4,11 @@ import Meaning from "./Meaning";
 export default function Definitions(props) {
 
   return (
-    <div className="definitions mx-3">
+    <div className="definitions">
       <h3 className="card-subtitle word-category">
         {props.definition.partOfSpeech}
       </h3>
-      <hr className="category-underline" />
+      <hr className="category-underline mt-2" />
         {props.definition.definitions.map(function (definition, index) {
           return (
             <div key={index}>

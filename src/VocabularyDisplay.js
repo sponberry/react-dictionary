@@ -17,15 +17,14 @@ export default function VocabularyDisplay(props) {
                 {"[ "}{props.pronunciation.text}{" ]"} <a href={props.pronunciation.link} rel="noreferrer" className="icons">🔊</a>
             </h6>
             <hr />
-            <div className="row mt-5">
               {props.definitionsArray.map(function (meaning, index) {
                 return (
                   <div key={index}>
-                    <Definitions definition={meaning} />
+                    <Definitions  definition={meaning} />
                   </div>
                 )
               })}
-            
+            <div className="row mt-5">
             {/* column 1 */}
               <div className="col-md-6">
                 <h2 className="card-title">
