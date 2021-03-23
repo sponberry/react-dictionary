@@ -41,6 +41,7 @@ export default function DictionarySearch() {
 
   function handleSearch(event) {
     event.preventDefault();
+    setCurrentWord({ready:false});
     let dictApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${vocabulary}`;
     let museApiUrl = `https://api.datamuse.com/words?rel_rhy=${vocabulary}`
     axios.get(museApiUrl).then(getRhymes);

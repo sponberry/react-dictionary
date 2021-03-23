@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Definitions from "./Definitions";
 import Rhymes from "./Rhymes";
 import Synonyms from "./Synonyms";
 
 export default function VocabularyDisplay(props) {
-  console.log(props.rhymes);
+  
+  function handleClick(event) {
+    event.preventDefault();
+    let audioClip = document.getElementById("vocal");
 
+    try {
+      audioClip.play();
+    } catch(err) {
+      event.target.classList.add("noPlay");
+    }
+  }
 
   if (props.load) {
     return (
@@ -17,7 +26,9 @@ export default function VocabularyDisplay(props) {
                 {props.word}
             </h2>
             <h6 className="card-subtitle text-muted pronunciation">
-                {"[ "}{props.pronunciation.text}{" ]"} <a href={props.pronunciation.link} rel="noreferrer" className="icons">🔊</a>
+                {"[ "}{props.pronunciation.text}{" ]"} 
+                <audio preload="auto" id="vocal"><source src={props.pronunciation.audio} /></audio>
+                <a href="/" rel="noreferrer" className="icons" onClick={handleClick}>🔊</a>
             </h6>
             <hr />
               {props.definitionsArray.map(function (meaning, index) {

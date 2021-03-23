@@ -67,3 +67,9 @@ form {
 .definitions {
     display: block;
 }
+
+.noPlay:hover {
+    text-decoration: none;
+    background-color: coral;
+    border-radius: 20px;
+}
