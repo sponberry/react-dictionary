@@ -4,7 +4,7 @@ import ExpandedList from "./ExpandedList";
 export default function Rhymes(props) {
     let moreRhymes = []
 
-    if (props.rhymes) {
+    if (props.rhymes.length < 1) {
       return (
         <span>
           <h2 className="card-title">
@@ -20,9 +20,7 @@ export default function Rhymes(props) {
                 );
                 } else {
                   moreRhymes.push(rhyme.word);
-                  return (
-                    <span key={index}></span>
-                  )
+                  return null
                 }
             })}
           </p>

@@ -69,7 +69,7 @@ export default function DictionarySearch() {
       <div className="dictionary">
         <h1>What's the word?</h1>
         <div className="spacer-twenty"></div>
-        <form className="form-control input-group input-group-lg" onSubmit={handleSearch}>
+        <form className="form-control form-control-lg" onSubmit={handleSearch}>
         <InputGroup className=" border rounded-pill">
 
           <DropdownButton
@@ -81,7 +81,7 @@ export default function DictionarySearch() {
             <Dropdown.Item href="#">Definition</Dropdown.Item>
             <Dropdown.Item href="#">Synonyms</Dropdown.Item>
           </DropdownButton>
-          <input type="search" className="form-control mx-2" placeholder="type a word..." onChange={handleTyping}/>
+          <input type="search" className="form-control search-box" placeholder="type a word..." onChange={handleTyping}/>
           <input type="submit" className="btn btn-outline-secondary mb-1" value="🔍"/>
           </InputGroup>
         </form>

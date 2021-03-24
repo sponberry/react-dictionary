@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 
 export default function ExpandedList(props) {
 
-  if (props.list) {
+  if (props.list.length > 0) {
     return (
       <Accordion>
         <Accordion.Toggle as={Button} variant="link" eventKey="0">

@@ -6,15 +6,19 @@ h1 {
     font-weight: 800;
 }
 
+.vocabulary-display {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 form {
     margin: 0 auto;
     text-align: center;
-    width: 50% !important;
+    width: 60% !important;
 }
 
 .form-control {
     border: none !important;
-    width: 70% !important;
 }
 
 .btn-outline-secondary {
