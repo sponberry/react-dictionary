@@ -1,18 +1,16 @@
 import React from "react";
-import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+import ExpandedList from "./ExpandedList";
 
 export default function Rhymes(props) {
     let moreRhymes = []
 
     if (props.rhymes) {
       return (
-        <span className="rhymes">
+        <span>
           <h2 className="card-title">
             Rhymes
           </h2>
-          <p>
+          <p className="rhymes">
             {props.rhymes.map(function (rhyme, index) {
               if (index <= 5) {
                 return(
@@ -28,20 +26,7 @@ export default function Rhymes(props) {
                 }
             })}
           </p>
-          <Accordion>
-            <Accordion.Toggle as={Button} variant="link" eventKey="0">
-              Read more
-            </Accordion.Toggle>
-            <Accordion.Collapse eventKey="0">
-              <Card.Body>{moreRhymes.map(function (word, index) {
-                return (
-                  <div key={index}>
-                    {word}
-                  </div>
-                )
-              })}</Card.Body>
-            </Accordion.Collapse>
-          </Accordion>
+          <ExpandedList list={moreRhymes} />
         </span>
       )
     } else {

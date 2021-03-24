@@ -5,11 +5,13 @@ import Dropdown from "react-bootstrap/Dropdown";
 import InputGroup from "react-bootstrap/InputGroup";
 import axios from "axios";
 import VocabularyDisplay from "./VocabularyDisplay";
+import ErrorPage from "./ErrorPage";
 
 export default function DictionarySearch() {
   let [vocabulary, setVocabulary] = useState(null);
   let [currentWord, setCurrentWord] = useState({ready:false});
   let [rhymes, setRhymes] = useState([]);
+  let [foundError, setFoundError] = useState(false)
 
   function handleTyping(event) {
     setVocabulary(event.target.value);
@@ -18,8 +20,8 @@ export default function DictionarySearch() {
   function getWordData(response) {
     if (response.status !== 200) {
       console.log("An error occurred");
-      setVocabulary(null);
     } else {
+      setFoundError(false);
       setCurrentWord({
         ready: true,
         word: response.data[0].word,
@@ -46,8 +48,20 @@ export default function DictionarySearch() {
     let museApiUrl = `https://api.datamuse.com/words?rel_rhy=${vocabulary}`
     axios.get(museApiUrl).then(getRhymes);
     setTimeout(() =>
-      {axios.get(dictApiUrl).then(getWordData)},
-      500
+      {axios.get(dictApiUrl).then(function (response) {
+        getWordData(response);
+      })
+      .catch(function (error) {
+        setFoundError(true);
+        if (error.status === 404) {  
+          console.log("404 error caught");
+          return Promise.reject(error);
+          } else {
+          console.log("other error");
+          return Promise.reject(error);
+      }})
+      .catch(error => Promise.reject(error))
+        }, 500
     );
   }
   
@@ -79,6 +93,7 @@ export default function DictionarySearch() {
         synonyms={currentWord.synonyms}
         rhymes={rhymes}
          />
+        <ErrorPage error={foundError} />
       </div>
     )
 }

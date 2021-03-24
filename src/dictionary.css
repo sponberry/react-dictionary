@@ -78,3 +78,13 @@ form {
     background-color: coral;
     border-radius: 20px;
 }
+
+.btn-link {
+    padding:0 !important;
+    margin: 0 !important; 
+    display: inline !important;
+    color:lightblue !important;
+}
+.synonyms, .rhymes {
+    margin-bottom: 0;
+}
