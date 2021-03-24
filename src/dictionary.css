@@ -27,9 +27,14 @@ form {
 }
 
 .pronunciation {
-    color: lightblue;
+    color: gray;
     display: inline-block;
     padding-bottom: 20px;
+}
+
+.example {
+    color: lightblue;
+    font-style: italic;
 }
 
 .icons {

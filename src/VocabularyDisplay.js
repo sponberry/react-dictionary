@@ -4,7 +4,7 @@ import Rhymes from "./Rhymes";
 import Synonyms from "./Synonyms";
 
 export default function VocabularyDisplay(props) {
-  
+
   function handleClick(event) {
     event.preventDefault();
     let audioClip = document.getElementById("vocal");
@@ -13,6 +13,7 @@ export default function VocabularyDisplay(props) {
       audioClip.play();
     } catch(err) {
       event.target.classList.add("noPlay");
+      console.log("audio clip error: could be does not exist")
     }
   }
 
@@ -30,6 +31,7 @@ export default function VocabularyDisplay(props) {
                 <audio preload="auto" id="vocal"><source src={props.pronunciation.audio} /></audio>
                 <a href="/" rel="noreferrer" className="icons" onClick={handleClick}>🔊</a>
             </h6>
+            <p className="example">{props.definitionsArray[0].definitions[0].example}</p>
             <hr />
               {props.definitionsArray.map(function (meaning, index) {
                 return (

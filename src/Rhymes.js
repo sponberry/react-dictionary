@@ -23,7 +23,7 @@ export default function Rhymes(props) {
                 } else {
                   moreRhymes.push(rhyme.word);
                   return (
-                    <span></span>
+                    <span key={index}></span>
                   )
                 }
             })}

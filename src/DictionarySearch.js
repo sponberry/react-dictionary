@@ -17,7 +17,7 @@ export default function DictionarySearch() {
 
   function getWordData(response) {
     if (response.status !== 200) {
-      alert("An error occurred");
+      console.log("An error occurred");
       setVocabulary(null);
     } else {
       setCurrentWord({
