@@ -7,8 +7,9 @@ import axios from "axios";
 import VocabularyDisplay from "./VocabularyDisplay";
 import ErrorPage from "./ErrorPage";
 import SynonymDisplay from "./SynonymDisplay";
+import { propTypes } from "react-bootstrap/esm/Image";
 
-export default function DictionarySearch() {
+export default function DictionarySearch(props) {
   let [vocabulary, setVocabulary] = useState(null);
   let [currentWord, setCurrentWord] = useState({ready:false});
   let [rhymes, setRhymes] = useState([]);
@@ -33,19 +34,26 @@ export default function DictionarySearch() {
     }};
 
   function getRhymes(response) {
-    if (response.status !== 200) {
-      alert("An error occurred");
-      setVocabulary(null);
-    } else {
-      setRhymes(response.data);
-    }};
+    setRhymes(response.data);
+    };
+
+  function getPhoto(response) {
+    props.setPhotoData(response.data.photos[0]);
+  }
 
   function handleSearch(event) {
     event.preventDefault();
     setCurrentWord({ready:false});
-    let dictApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${vocabulary}`;
+
+    let apiKey = process.env.REACT_APP_PEXEL_KEY;
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${vocabulary}&per_page=1`;
+    let headers = { Authorization: `Bearer ${apiKey}` };
+    axios.get(pexelsApiUrl, { headers: headers }).then(getPhoto).catch(error => Promise.reject(error));
+    
     let museApiUrl = `https://api.datamuse.com/words?rel_rhy=${vocabulary}`
     axios.get(museApiUrl).then(getRhymes);
+
+    let dictApiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${vocabulary}`;
     setTimeout(() =>
       {axios.get(dictApiUrl).then(function (response) {
         getWordData(response);
@@ -77,7 +85,7 @@ export default function DictionarySearch() {
         <h1>What's the word? Dict</h1>
         <div className="spacer-twenty"></div>
         <form className="form-control form-control-lg" onSubmit={handleSearch}>
-        <InputGroup className=" border rounded-pill">
+        <InputGroup className="border rounded-pill mt-n1">
           <DropdownButton
           as={InputGroup.Prepend}
           variant="outline-secondary"

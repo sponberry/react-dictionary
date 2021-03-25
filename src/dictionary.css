@@ -1,13 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=New+Tegomin&family=Source+Code+Pro:ital,wght@1,200;1,300;1,400&display=swap');
 
+.dictionary {
+    opacity: 100% !important;
+}
+
 h1, form {
     text-align: center;
 }
 
 h1 {
+    color: rgb(44, 44, 44);
     font-family: 'New Tegomin', Georgia, Times, 'Times New Roman', serif;
     font-size: 3.5rem !important;
     padding-top: 40px;
+    mix-blend-mode: multiply;
 }
 
 .vocabulary-display {

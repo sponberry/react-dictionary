@@ -1,6 +1,15 @@
-
 .container-fluid {
-    margin: 30px 0;
+    padding-top: 30px !important;
     padding-left: 10% !important;
     padding-right: 10% !important;
+    background-repeat: repeat-y;
+}
+
+.App-header {
+    color: rgb(114, 114, 114);
+    font-size: 14px;
+    position: relative;
+    right: 10%;
+    bottom: 20px;
+    mix-blend-mode: multiply;
 }
