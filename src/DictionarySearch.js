@@ -7,7 +7,6 @@ import axios from "axios";
 import VocabularyDisplay from "./VocabularyDisplay";
 import ErrorPage from "./ErrorPage";
 import SynonymDisplay from "./SynonymDisplay";
-import { propTypes } from "react-bootstrap/esm/Image";
 
 export default function DictionarySearch(props) {
   let [vocabulary, setVocabulary] = useState(null);
