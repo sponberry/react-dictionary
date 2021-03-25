@@ -17,7 +17,7 @@ export default function VocabularyDisplay(props) {
     }
   }
 
-  if (props.load) {
+  if (props.load && props.mode === "definition") {
     return (
         <div className="vocabulary-display">
         <div className="spacer-twenty"></div>
@@ -41,11 +41,9 @@ export default function VocabularyDisplay(props) {
                 )
               })}
             <div className="row mt-5">
-            {/* column 1 */}
               <div className="col-md-6">
                 <Rhymes rhymes={props.rhymes} />
               </div>
-              {/* column 2 */}
               <div className="col-md-6">
                 <Synonyms synonyms={props.synonyms}/>
               </div>

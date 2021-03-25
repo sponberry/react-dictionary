@@ -4,7 +4,7 @@ import ExpandedList from "./ExpandedList";
 export default function Rhymes(props) {
     let moreRhymes = []
 
-    if (props.rhymes.length < 1) {
+    if (props.rhymes) {
       return (
         <span>
           <h2 className="card-title">
