@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,200;1,300;1,400&display=swap');
+
 .container-fluid {
     padding-top: 30px !important;
     padding-left: 10% !important;
@@ -12,4 +14,40 @@
     right: 10%;
     bottom: 20px;
     mix-blend-mode: multiply;
+}
+
+.code-link {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+}
+
+.icon {
+    font-size: 1.7em;
+}
+
+.header-row {
+    width: 100px;
+}
+
+a {
+    color: rgb(103, 96, 148) !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+    color: rgb(35, 26, 94) !important;
+}
+
+.p-header {
+    font-family: 'Source Code Pro', sans-serif;
+    font-size: 14px;
+    line-height: 100% !important;
+    mix-blend-mode: multiply;
+    margin-top: 5px;
+}
+
+.col-sm-6 {
+    padding-right: 3px !important;
+    padding-left: 0 !important;
 }
