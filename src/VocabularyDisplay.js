@@ -1,5 +1,5 @@
 import React from "react";
-import Definitions from "./Definitions";
+import AllMeanings from "./AllMeanings";
 import Rhymes from "./Rhymes";
 import Synonyms from "./Synonyms";
 
@@ -33,11 +33,9 @@ export default function VocabularyDisplay(props) {
             </h6>
             <p className="example">{props.word[0].meanings[0].definitions[0].example}</p>
             <hr />
-              {props.word[0].meanings.map(function (meaning, index) {
+              {props.word.map(function (meaningSet, index) {
                 return (
-                  <div key={index}>
-                    <Definitions  definition={meaning} />
-                  </div>
+                  <AllMeanings meaningSet={meaningSet} key={index} />
                 )
               })}
             <div className="row mt-5">
