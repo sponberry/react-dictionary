@@ -1,0 +1,14 @@
+.btn-link {
+    padding:0 !important;
+    margin: 0 !important; 
+    display: inline !important;
+    color:lightblue !important;
+}
+.synonyms, .rhymes {
+    margin-bottom: 0;
+}
+
+ul {
+    list-style: none;
+    padding-left: 2px;
+}

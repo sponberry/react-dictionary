@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&family=Source+Code+Pro:ital,wght@1,200;1,300;1,400&display=swap');
+
+.vocabulary-display {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.vocabulary-title {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.pronunciation {
+    color: gray;
+    display: inline-block;
+    padding-bottom: 20px;
+}
+
+.example {
+    color: lightblue;
+    font-style: italic;
+    font-family: 'Source Code Pro';
+    font-weight: 400;
+}
+
+.icons {
+    font-size: 2em;
+    margin: 0 0 0 5px;
+    padding: 3px;
+}
+
+.icons:hover {
+    text-decoration: none;
+    background-color: rgba(188, 215, 224, 0.6);
+    border-radius: 20px;
+}
+
+.noPlay:hover {
+    text-decoration: none;
+    background-color: coral;
+    border-radius: 20px;
+}
+
+.word-category {
+    color: rgb(61, 61, 61);
+    margin-top: 20px !important;
+    font-style: italic;
+    font-size: 24px;
+}

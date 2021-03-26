@@ -1,29 +1,31 @@
 import React from "react";
 import ExpandedList from "./ExpandedList";
 
+import "./SynonymsRhymes.css";
+
 export default function Rhymes(props) {
     let moreRhymes = []
 
-    if (props.rhymes) {
+    if (props.rhymes.length !== 0) {
       return (
         <span>
           <h2 className="card-title">
             Rhymes
           </h2>
-          <p className="rhymes">
+          <ul className="rhymes">
             {props.rhymes.map(function (rhyme, index) {
               if (index <= 5) {
                 return(
-                  <div key={index}>
+                  <li key={index}>
                     {rhyme.word}
-                  </div>
+                  </li>
                 );
                 } else {
                   moreRhymes.push(rhyme.word);
                   return null
                 }
             })}
-          </p>
+          </ul>
           <ExpandedList list={moreRhymes} />
         </span>
       )

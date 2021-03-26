@@ -3,8 +3,9 @@ import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-export default function ExpandedList(props) {
+import "./SynonymsRhymes.css";
 
+export default function ExpandedList(props) {
   if (props.list.length > 0) {
     return (
       <Accordion>
@@ -12,17 +13,19 @@ export default function ExpandedList(props) {
           Read more
         </Accordion.Toggle>
         <Accordion.Collapse eventKey="0">
+          <ul>
           <Card.Body className="ml-n3 mt-n3">{props.list.map(function (word, index) {
             if (index < 15) {
             return (
-              <div key={index}>
+              <li className="ml-n1" key={index}>
                 {word}
-              </div>
+              </li>
             )
             } else {
               return null
             }
           })}</Card.Body>
+          </ul>
         </Accordion.Collapse>
       </Accordion>
     )

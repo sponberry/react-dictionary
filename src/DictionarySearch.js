@@ -37,8 +37,11 @@ export default function DictionarySearch(props) {
     };
 
   function getPhoto(response) {
-    props.setPhotoData(response.data.photos[0]);
-  }
+    if (response.data.photos[0]) {
+      props.setPhotoData(response.data.photos[0]);
+    } else {
+      props.setPhotoData(props.dict_img_obj)  
+  }};
 
   function handleSearch(event) {
     event.preventDefault();
@@ -83,7 +86,7 @@ export default function DictionarySearch(props) {
       <div className="dictionary">
         <h1>What's the word? Dict</h1>
         <div className="spacer-twenty"></div>
-        <form className="form-control form-control-lg" onSubmit={handleSearch}>
+        <form className="form-control form-control-lg rounded-pill" onSubmit={handleSearch}>
         <InputGroup className="border rounded-pill mt-n1">
           <DropdownButton
           as={InputGroup.Prepend}

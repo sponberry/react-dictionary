@@ -1,9 +1,9 @@
 import React from "react";
 import Synonyms from "./Synonyms";
 
-export default function SynonymDisplay(props) {
+import "./VocabularyDisplay.css";
 
-// needed: a load prop, the word prop, synonyms prop
+export default function SynonymDisplay(props) {
   if (props.load && props.mode === "synonyms") {
     return (
         <div className="vocabulary-display">

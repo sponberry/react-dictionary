@@ -12,11 +12,6 @@ h1 {
     mix-blend-mode: multiply;
 }
 
-.vocabulary-display {
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
 form {
     margin: 0 auto;
     text-align: center;
@@ -31,72 +26,6 @@ form {
     border: none !important;
 }
 
-.vocabulary-title {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-.pronunciation {
-    color: gray;
-    display: inline-block;
-    padding-bottom: 20px;
-}
-
-.example {
-    color: lightblue;
-    font-style: italic;
-    font-family: 'Source Code Pro';
-    font-weight: 400;
-}
-
-.icons {
-    font-size: 2em;
-    margin: 0 0 0 5px;
-    padding: 3px;
-}
-
-.icons:hover {
-    text-decoration: none;
-    background-color: rgba(188, 215, 224, 0.6);
-    border-radius: 20px;
-}
-
-.word-category {
-    color: rgb(61, 61, 61);
-    margin-top: 20px !important;
-    font-style: italic;
-    font-size: 24px;
-}
-
-.category-underline {
-    width: 50px;
-    margin-left: 0;
-}
-
 .spacer-twenty {
     padding: 20px;
-}
-
-.spacer-forty {
-    padding: 40px;
-}
-
-.definitions {
-    display: block;
-}
-
-.noPlay:hover {
-    text-decoration: none;
-    background-color: coral;
-    border-radius: 20px;
-}
-
-.btn-link {
-    padding:0 !important;
-    margin: 0 !important; 
-    display: inline !important;
-    color:lightblue !important;
-}
-.synonyms, .rhymes {
-    margin-bottom: 0;
 }

@@ -1,6 +1,8 @@
 import React from "react";
 import ExpandedList from "./ExpandedList";
 
+import "./SynonymsRhymes.css";
+
 export default function Synonyms(props) {
     let moreSynonyms = []
 
@@ -10,20 +12,20 @@ export default function Synonyms(props) {
           <h2 className="card-title">
             Synonyms
           </h2>
-          <p className="synonyms">
+          <ul className="synonyms">
             {props.synonyms.map(function (synonym, index) {
               if (index <= 5) {
                 return(
-                  <div key={index}>
+                  <li key={index}>
                     {synonym}
-                  </div>
+                  </li>
                 );
                 } else {
                   moreSynonyms.push(synonym);
                   return null
                 }
             })}
-          </p>
+          </ul>
           <ExpandedList list={moreSynonyms} />
         </span>
       )

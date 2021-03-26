@@ -1,8 +1,9 @@
 import React from "react";
 import Meaning from "./Meaning";
 
-export default function Definitions(props) {
+import "./Definitions.css";
 
+export default function Definitions(props) {
   return (
     <div className="definitions">
       <h3 className="card-subtitle word-category">

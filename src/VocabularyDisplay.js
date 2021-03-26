@@ -3,6 +3,8 @@ import Definitions from "./Definitions";
 import Rhymes from "./Rhymes";
 import Synonyms from "./Synonyms";
 
+import "./VocabularyDisplay.css";
+
 export default function VocabularyDisplay(props) {
 
   function handleClick(event) {

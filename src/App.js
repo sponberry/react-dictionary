@@ -3,9 +3,9 @@ import DictionarySearch from "./DictionarySearch";
 import './App.css';
 
 
-
 function App() {
-  let [bgImage, setBgImage] = useState({photographer: "Snapwire", src: {large2x:"https://images.pexels.com/photos/6997/books-writing-reading-sonja-langford.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}})
+  const dict_img_obj = {photographer: "Snapwire", src: {large2x:"https://images.pexels.com/photos/6997/books-writing-reading-sonja-langford.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}};
+  let [bgImage, setBgImage] = useState(dict_img_obj);
 
   const link = "https://github.com/sponberry/react-dictionary"
   const styles = {
@@ -29,7 +29,7 @@ function App() {
               <p className="p-header"><a href={link} target="_blank" rel="noreferrer">Code by Abi</a></p>
             </div>
         </header>
-        <DictionarySearch setPhotoData={(value) => {
+        <DictionarySearch dict_img_obj={dict_img_obj} setPhotoData={(value) => {
           setBgImage(value);
         }}/>
     </div>
