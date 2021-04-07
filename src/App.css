@@ -1,9 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,200;1,300;1,400&display=swap');
 
+:root {
+    --side-padding: 10%;
+    --top-padding: 30px;
+}
+
+@media only screen
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    :root {
+        --side-padding: 5%;
+        --top-padding: 20px;
+    }
+}
+
 .container-fluid {
-    padding-top: 30px !important;
-    padding-left: 10% !important;
-    padding-right: 10% !important;
+    padding-top: var(--top-padding, 30px) !important;
+    padding-left: var(--side-padding, 10%) !important;
+    padding-right: var(--side-padding, 10%)!important;
     background-repeat: repeat-y;
 }
 

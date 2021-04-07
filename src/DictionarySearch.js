@@ -44,7 +44,7 @@ export default function DictionarySearch(props) {
     event.preventDefault();
     setCurrentWord({ready:false});
     // API call for pexels photo based on vocabulary searched
-    let apiKey = process.env.REACT_APP_PEXEL_KEY;
+    let apiKey = "563492ad6f9170000100000194008f6590a041e9955645dabd922602";
     let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${vocabulary}&per_page=1`;
     let headers = { Authorization: `Bearer ${apiKey}` };
     axios.get(pexelsApiUrl, { headers: headers }).then(getPhoto).catch(error => Promise.reject(error));
