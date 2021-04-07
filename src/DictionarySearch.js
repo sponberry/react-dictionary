@@ -80,7 +80,12 @@ export default function DictionarySearch(props) {
         <div className="spacer-twenty"></div>
         <form className="form-control form-control-lg rounded-pill" onSubmit={handleSearch}>
         <InputGroup className="border rounded-pill mt-n1">
-          <DropdownButton as={InputGroup.Prepend} variant="outline-secondary" title="Search for" id="input-group-dropdown-1">
+          <DropdownButton 
+          as={InputGroup.Prepend} 
+          variant="outline-secondary" 
+          title="Search for" 
+          id="input-group-dropdown-1"
+          className="d-none d-lg-block" >
             <Dropdown.Item href="/" onClick={definitionMode}>Definition</Dropdown.Item>
             <Dropdown.Item href="/" onClick={synonymMode}>Synonyms</Dropdown.Item>
           </DropdownButton>

@@ -18,8 +18,9 @@ function App() {
 
   return (
     <div className="App container-fluid" style={styles}>
-        <header className="App-header">
-          Image credit: {bgImage.photographer}
+        <header className="App-header flex-wrap d-flex">
+          Image credit: <br />
+          {bgImage.photographer}
         </header>
         <header className="code-link row">
             <div className="col-sm-6 mr-n2 icon">
