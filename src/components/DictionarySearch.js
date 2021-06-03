@@ -7,7 +7,7 @@ import VocabularyDisplay from "./VocabularyDisplay";
 import SynonymDisplay from "./SynonymDisplay";
 import ErrorPage from "./ErrorPage";
 
-import "./dictionary.css";
+import "../styles/dictionary.css";
 
 export default function DictionarySearch(props) {
   let [vocabulary, setVocabulary] = useState(null);

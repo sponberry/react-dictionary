@@ -1,7 +1,7 @@
 import React from "react";
 import Definitions from "./Definitions";
 
-import "./VocabularyDisplay.css";
+import "../styles/VocabularyDisplay.css";
 
 export default function MeaningSet(props) {
     return (

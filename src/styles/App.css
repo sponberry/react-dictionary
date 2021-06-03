@@ -6,16 +6,6 @@
     --header-padding: 10%;
 }
 
-@media only screen
-  and (min-device-width: 375px)
-  and (max-device-width: 812px) {
-    :root {
-        --side-padding: 3%;
-        --top-padding: 20px;
-        --header-padding: 0%;
-    }
-}
-
 .container-fluid {
     padding-top: var(--top-padding, 30px) !important;
     padding-left: var(--side-padding, 10%) !important;
@@ -66,4 +56,22 @@ a:hover {
 .col-sm-6 {
     padding-right: 3px !important;
     padding-left: 0 !important;
+}
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px) {
+    :root {
+        --side-padding: 3%;
+        --top-padding: 20px;
+        --header-padding: 0%;
+    }
+
+    .p-header {
+        display: none;
+    }
+
+    .code-link {
+        right: 40px;
+    }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import Synonyms from "./Synonyms";
 
-import "./VocabularyDisplay.css";
+import "../styles/VocabularyDisplay.css";
 
 export default function SynonymDisplay(props) {
   if (props.load && props.mode === "synonyms") {

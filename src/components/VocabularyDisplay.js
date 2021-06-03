@@ -3,7 +3,7 @@ import AllMeanings from "./AllMeanings";
 import Rhymes from "./Rhymes";
 import Synonyms from "./Synonyms";
 
-import "./VocabularyDisplay.css";
+import "../styles/VocabularyDisplay.css";
 
 export default function VocabularyDisplay(props) {
 
@@ -21,8 +21,8 @@ export default function VocabularyDisplay(props) {
     return (
         <div className="vocabulary-display">
         <div className="spacer-twenty"></div>
-        <div className="card mt-4 mx-5">
-          <div className="card-body mx-auto px-auto mt-2 pt-5">
+        <div className="card mt-4">
+          <div className="card-body vocab-buffer">
             <h2 className="card-title vocabulary-title">
                 {props.word[0].word}
             </h2>

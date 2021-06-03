@@ -1,7 +1,7 @@
 import React from "react";
 import Meaning from "./Meaning";
 
-import "./Definitions.css";
+import "../styles/Definitions.css";
 
 export default function Definitions(props) {
   return (

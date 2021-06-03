@@ -3,7 +3,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-import "./SynonymsRhymes.css";
+import "../styles/SynonymsRhymes.css";
 
 export default function ExpandedList(props) {
   if (props.list.length > 0) {

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import DictionarySearch from "./DictionarySearch";
-import './App.css';
+import DictionarySearch from "./components/DictionarySearch";
+import './styles/App.css';
 
 
 function App() {
-  const dict_img_obj = {photographer: "Snapwire", src: {large2x:"https://images.pexels.com/photos/6997/books-writing-reading-sonja-langford.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}};
-  let [bgImage, setBgImage] = useState(dict_img_obj);
+  const dict_img_obj = {
+    photographer: "Snapwire",
+    src: { large2x:"https://images.pexels.com/photos/6997/books-writing-reading-sonja-langford.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" }};
+  let [ bgImage, setBgImage ] = useState(dict_img_obj);
 
   const link = "https://github.com/sponberry/react-dictionary"
   const styles = {

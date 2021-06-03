@@ -1,39 +1,39 @@
 import React from "react";
 import ExpandedList from "./ExpandedList";
 
-import "./SynonymsRhymes.css";
+import "../styles/SynonymsRhymes.css";
 
-export default function Rhymes(props) {
-    let moreRhymes = []
+export default function Synonyms(props) {
+    let moreSynonyms = []
 
-    if (props.rhymes.length !== 0) {
+    if (props.synonyms) {
       return (
         <span>
           <h2 className="card-title">
-            Rhymes
+            Synonyms
           </h2>
-          <ul className="rhymes">
-            {props.rhymes.map(function (rhyme, index) {
+          <ul className="synonyms">
+            {props.synonyms.map(function (synonym, index) {
               if (index <= 5) {
                 return(
                   <li key={index}>
-                    {rhyme.word}
+                    {synonym}
                   </li>
                 );
                 } else {
-                  moreRhymes.push(rhyme.word);
+                  moreSynonyms.push(synonym);
                   return null
                 }
             })}
           </ul>
-          <ExpandedList list={moreRhymes} />
+          <ExpandedList list={moreSynonyms} />
         </span>
       )
     } else {
       return (
-        <span className="rhymes">
+        <span className="synonyms">
           <h2 className="card-title">
-            Rhymes
+            Synonyms
           </h2>
           <p>
             None found.
